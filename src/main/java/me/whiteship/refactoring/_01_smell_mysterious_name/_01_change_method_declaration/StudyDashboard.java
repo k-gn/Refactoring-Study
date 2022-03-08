@@ -1,4 +1,4 @@
-package me.whiteship.refactoring._01_change_method_declaration;
+package me.whiteship.refactoring._01_smell_mysterious_name._01_change_method_declaration;
 
 import org.kohsuke.github.GHIssue;
 import org.kohsuke.github.GHIssueComment;
