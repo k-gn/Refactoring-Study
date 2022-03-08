@@ -1,4 +1,4 @@
-package me.whiteship.refactoring._02_duplicated_code._01_before;
+package me.whiteship.refactoring._02_duplicated_code._05_slide_statements;
 
 import org.kohsuke.github.GHIssue;
 import org.kohsuke.github.GHRepository;
@@ -8,17 +8,18 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+// 관련 있는 코드끼리 묶음 - 이해하기 쉬워짐
+// 사용하는 변수는 사용되는 직전에 선언할 것
 public class StudyDashboard {
 
     private void printParticipants(int eventId) throws IOException {
-        Set<String> participants = new HashSet<>();
-        GitHub gitHub = GitHub.connect();
-
         // Get github issue to check homework
+        GitHub gitHub = GitHub.connect();
         GHRepository repository = gitHub.getRepository("whiteship/live-study");
         GHIssue issue = repository.getIssue(eventId);
 
         // Get participants
+        Set<String> participants = new HashSet<>();
         issue.getComments().forEach(c -> participants.add(c.getUserName()));
 
         // Print participants
@@ -26,14 +27,13 @@ public class StudyDashboard {
     }
 
     private void printReviewers() throws IOException {
-        GitHub gitHub = GitHub.connect();
-        Set<String> reviewers = new HashSet<>();
-
         // Get github issue to check homework
+        GitHub gitHub = GitHub.connect();
         GHRepository repository = gitHub.getRepository("whiteship/live-study");
         GHIssue issue = repository.getIssue(30);
 
         // Get reviewers
+        Set<String> reviewers = new HashSet<>();
         issue.getComments().forEach(c -> reviewers.add(c.getUserName()));
 
         // Print reviewers
@@ -44,7 +44,9 @@ public class StudyDashboard {
         StudyDashboard studyDashboard = new StudyDashboard();
         studyDashboard.printReviewers();
         studyDashboard.printParticipants(15);
-
     }
+
+
+
 
 }
