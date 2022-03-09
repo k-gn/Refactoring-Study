@@ -43,7 +43,7 @@ public class StudyDashboard {
                         List<GHIssueComment> comments = issue.getComments();
 
                         for (GHIssueComment comment : comments) {
-                            Participant participant = findParticipant(new FindParticipant(comment.getUserName(), participants));
+                            Participant participant = findParticipant(new ParticipantFinder(comment.getUserName(), participants));
                             participant.setHomeworkDone(eventId);
                         }
 
@@ -61,27 +61,27 @@ public class StudyDashboard {
         new StudyPrinter(this.totalNumberOfEvents, participants).execute();
     }
 
-    private Participant findParticipant(FindParticipant findParticipant) {
+    private Participant findParticipant(ParticipantFinder findParticipant) {
         return isNewParticipant(findParticipant) ?
                 createNewParticipant(findParticipant) :
                 findExistingParticipant(findParticipant);
     }
 
-    private Participant findExistingParticipant(FindParticipant findParticipant) {
+    private Participant findExistingParticipant(ParticipantFinder findParticipant) {
         Participant participant;
         participant = findParticipant.getParticipants().stream()
                 .filter(p -> p.username().equals(findParticipant.getUsername())).findFirst().orElseThrow();
         return participant;
     }
 
-    private Participant createNewParticipant(FindParticipant findParticipant) {
+    private Participant createNewParticipant(ParticipantFinder findParticipant) {
         Participant participant;
         participant = new Participant(findParticipant.getUsername());
         findParticipant.getParticipants().add(participant);
         return participant;
     }
 
-    private boolean isNewParticipant(FindParticipant findParticipant) {
+    private boolean isNewParticipant(ParticipantFinder findParticipant) {
         return findParticipant.getParticipants().stream()
                 .noneMatch(p -> p.username().equals(findParticipant.getUsername()));
     }
