@@ -61,6 +61,7 @@ public class StudyDashboard {
         new StudyPrinter(this.totalNumberOfEvents, participants).execute();
     }
 
+    // 조건문 분해하기
     private Participant findParticipant(ParticipantFinder findParticipant) {
         return isNewParticipant(findParticipant) ?
                 createNewParticipant(findParticipant) :
