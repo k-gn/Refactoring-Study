@@ -3,6 +3,7 @@ package me.whiteship.refactoring._05_global_data._17_encapsulate_variable;
 // 변수 캡슐화하기
 // 데이터 구조를 변경하는 작업을 좀금 더 수월한 메소드 구조 변경 작업으로 대체
 // 변수를 직접 접근하기 보다 메소드로 감싸는 작업을 해주면 변경에 유연하게 대처 가능
+// 감싼 메소드 내에서 검증과 후처리 용이
 // 데이터가 사용되는 범위가 클수록 캡슐화를 하는것이 중요
 // 불변 데이터일 경우 이런 리팩토링을 적용할 필요가 없다.
 public class Thermostats {
