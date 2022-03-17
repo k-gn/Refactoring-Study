@@ -15,6 +15,9 @@ import java.util.List;
 // 이 때 그 둘을 합칠 수 있다. (어떤 것을 없앨 지는 둘 중에 보다 이름이 적절한 쪽을 선택)
 public class Reservation {
 
+    // pull down
+    private String courtNumber;
+
     private LocalDateTime startDateTime;
 
     private LocalDateTime endDateTime;
