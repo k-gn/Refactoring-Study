@@ -21,4 +21,8 @@ public class Person {
     public void setDepartment(Department department) {
         this.department = department;
     }
+
+    public Person getManager() {
+        return getDepartment().getManager(); // 위임과정을 getManager() 안으로 숨김
+    }
 }
