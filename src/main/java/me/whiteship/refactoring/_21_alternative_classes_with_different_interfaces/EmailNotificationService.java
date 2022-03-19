@@ -2,7 +2,11 @@ package me.whiteship.refactoring._21_alternative_classes_with_different_interfac
 
 public class EmailNotificationService implements NotificationService {
 
-    private EmailService emailService;
+    private MessageService messageService;
+
+    public EmailNotificationService(MessageService messageService) {
+        this.messageService = messageService;
+    }
 
     @Override
     public void sendNotification(Notification notification) {
@@ -10,6 +14,6 @@ public class EmailNotificationService implements NotificationService {
         emailMessage.setTitle(notification.getTitle());
         emailMessage.setTo(notification.getReceiver());
         emailMessage.setFrom(notification.getSender());
-        emailService.sendEmail(emailMessage);
+        messageService.send(emailMessage);
     }
 }

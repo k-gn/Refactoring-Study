@@ -1,12 +1,14 @@
 package me.whiteship.refactoring._21_alternative_classes_with_different_interfaces;
 
-public class AlertMessage {
+public class AlertMessage extends Message {
 
-    public void setMessage(String message) {
+    @Override
+    public void setTitle(String title) {
 
     }
 
-    public void setFor(String email) {
+    @Override
+    public void setTo(String to) {
 
     }
 }

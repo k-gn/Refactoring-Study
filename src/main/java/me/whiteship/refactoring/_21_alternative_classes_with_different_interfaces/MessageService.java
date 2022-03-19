@@ -1,5 +1,6 @@
 package me.whiteship.refactoring._21_alternative_classes_with_different_interfaces;
 
-public interface EmailService extends MessageService {
+public interface MessageService {
 
+    void send(Message message);
 }
