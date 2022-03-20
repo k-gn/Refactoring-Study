@@ -15,25 +15,25 @@ package me.whiteship.refactoring._22_data_class._42_encapsulate_record;
 // 필드 이름을 변경할 때 점진적으로 변경할 수 있다.
 // 자바의 Record 는 불변 객체라 상관없긴 하다.
 // public 필드를 사용하는 코드를 private 로 변경하고 게터와 세터를 사용하도록 한다
-public class Organization {
+public record Organization(String name, String country) {
 
-    private String name;
-
-    private String country;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
+//    private String name;
+//
+//    private String country;
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getCountry() {
+//        return country;
+//    }
+//
+//    public void setCountry(String country) {
+//        this.country = country;
+//    }
 }
