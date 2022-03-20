@@ -6,10 +6,4 @@ package me.whiteship.refactoring._23_refused_bequest;
 // 서브클래스가 슈퍼클래스의 기능을 재사용하고 싶지만 인터페이스를 따르고 싶지 않은 경우에는 슈퍼클래스 또는 서브클래스를 위임으로 교체하기 적용가능
 public class Employee {
 
-    protected Quota quota;
-
-    protected Quota getQuota() {
-        return new Quota();
-    }
-
 }
