@@ -7,10 +7,33 @@ package me.whiteship.refactoring._22_data_class._42_encapsulate_record;
 // 변경 되지 않아야 할 필드에는 세터 제거하기를 사용한다.
 // 게터와 세터가 사용되는 메소드를 찾아보고 함수 옮기기를 사용해 데이터 클래스로 옮길 수 있다.
 // 메소드 전체가 아니라 일부 코드만 옮겨야 한다면 함수 추출하기를 선행한다.
+
+// 레코드 캡슐화하기
+// 변하는 데이터를 다룰 때는 레코드 보다 객체를 선호한다.
+// 여기서 레코드란 public 필드로 구성된 데이터 클래스를 의미
+// 데이터를 메소드 뒤로 감추면 객체의 클라이언트는 어떤 데이터가 저장되어 있는지 신경쓸 필요가 없다
+// 필드 이름을 변경할 때 점진적으로 변경할 수 있다.
+// 자바의 Record 는 불변 객체라 상관없긴 하다.
+// public 필드를 사용하는 코드를 private 로 변경하고 게터와 세터를 사용하도록 한다
 public class Organization {
 
-    public String name;
+    private String name;
 
-    public String country;
+    private String country;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }
