@@ -13,7 +13,7 @@ package me.whiteship.refactoring._22_data_class._42_encapsulate_record;
 // 여기서 레코드란 public 필드로 구성된 데이터 클래스를 의미
 // 데이터를 메소드 뒤로 감추면 객체의 클라이언트는 어떤 데이터가 저장되어 있는지 신경쓸 필요가 없다
 // 필드 이름을 변경할 때 점진적으로 변경할 수 있다.
-// 자바의 Record 는 불변 객체라 상관없긴 하다.
+// 자바의 Record 는 불변 객체라 상관없긴 하다. (불변 데이터 표현 시 유용)
 // public 필드를 사용하는 코드를 private 로 변경하고 게터와 세터를 사용하도록 한다
 public record Organization(String name, String country) {
 
